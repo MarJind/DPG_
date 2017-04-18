@@ -3,6 +3,11 @@ language: python
 python:
   - "2.7"
   - "3.5"
-  
+install:
+  -pip install coveralls
+
 script:
-  python hello.py
+  -coverage run hello.py
+
+after_success:
+ COVERALLS_REPO_TOKEN=32s8rB9dCrk94vh0iSAE8JwxqOjl5weYF coveralls
